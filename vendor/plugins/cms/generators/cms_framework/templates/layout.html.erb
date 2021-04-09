@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%%= Settings[:name] %> :: Administrative Area</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="rating" content="global" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <%%= javascript_include_merged :admin %>
+    <%%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+    <%%= stylesheet_link_merged :admin %>
+    <%%= yield :head %>
+  </head>
+  <body>
+    <h1><strong><%%= Settings[:name] %></strong> Administration Area</h1>
+<%% if signed_in? %>
+    <ul class="menu">
+      <li class="user">
+        <%% form_for :session, :url => sign_out_path, :html => { :method => :delete, :class => "logout_btn" } do |form| %>
+          <%%= button_submit_tag "Log Out" %>
+        <%% end %>
+      </li>
+    </ul>
+    <p id="logged_in_as"><span>Logged in as: <%%= current_user.name %></span></p>
+<%% end %>
+    <div id="page">
+      <div id="content">
+        <div id="notifications">
+          <%%= flash_messages(flash) %>
+          <%%= yield :notifications %>
+        </div>
+
+        <%%- unless @content_for_heading.blank? -%>
+        <h3 class="heading"><%%= yield :heading %></h3>
+        <%%- end -%>
+
+        <%%- unless @content_for_calltoaction.blank? -%>
+        <ul class="calltoaction">
+          <%%= yield :calltoaction %>
+        </ul>
+        <%%- end -%>
+
+        <%%= yield %>
+      </div><!-- #content -->
+    </div><!-- #page -->
+    <div id="footer">
+      <p><span>Powered By</span> <a href="http://crushlovely.com"><span>Crush + Lovely</span></a></p>
+    </div>
+  </body>
+</html>

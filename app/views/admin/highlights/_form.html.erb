@@ -1,0 +1,16 @@
+<% form.inputs do %>
+  <%= form.input :title %>
+  <%= form.input :body %>
+  <%= form.input :related_links %>
+  <%= form.input :download, :hint => attachment_requirements(:formats => ['pdf']) %>
+  <% if resource.download.file? %>
+  <li>
+    <strong>Current Downloadable File</strong>: <%= link_to File.basename(@highlight.download.url(:original, false)), @highlight.download.url %>
+  </li>
+  <% end %>
+  <% form.semantic_fields_for :images do |builder| %>
+    <%= render "image_fields", :form => builder %>
+  <% end %>
+  <li><%= link_to_add_fields "Add Image", form, :images %></li>
+  <%= is_visible_radio_buttons(form) %>
+<% end %>

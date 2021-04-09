@@ -1,0 +1,3 @@
+class NicaraguaController < ApplicationController
+
+end

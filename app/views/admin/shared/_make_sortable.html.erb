@@ -1,0 +1,6 @@
+
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('#<%= id %>').makeSortable('<%= path %>', '<%= form_authenticity_token if protect_against_forgery? %>');
+      });
+    </script>

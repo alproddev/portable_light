@@ -1,0 +1,15 @@
+--- 
+javascripts: 
+- admin: 
+  - admin/jquery
+  - admin/jquery.ui
+  - admin/jquery.tablednd
+  - admin/jquery.form
+  - admin/jquery.validate
+  - admin/fancyzoom
+  - admin/application
+stylesheets:
+- admin:
+  - reset
+  - foundation
+  - admin/master

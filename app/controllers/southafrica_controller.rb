@@ -1,0 +1,3 @@
+class SouthafricaController < ApplicationController
+
+end

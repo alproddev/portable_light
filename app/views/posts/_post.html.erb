@@ -1,0 +1,13 @@
+        <div id="post<%= post.id %>_wrap">
+<% if post.image? %>
+          <div class="ro hide_show" id="<%= post.id %>"><%= image_tag(post.image.url) %></div>
+<% end %>
+          <h3 id="post<%= post.id %>_link"><%= post.title %></h3>
+          <p><%= post.intro.to_html %></p>
+<% unless post.body.blank? %>
+          <div class="rest_o_body" id="<%= post.id %>_rest">
+            <p><%= post.body.to_html %></p>
+          </div>
+          <p><a href ="#" class="hide_show">more</a></p>
+<% end %>
+        <br /></div>

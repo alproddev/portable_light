@@ -1,0 +1,42 @@
+shared: &shared
+  :url_pattern: '/system/:class/:attachment/:id/:style/:basename.:extension'
+  :path_pattern: ':rails_root/public/system/:class/:attachment/:id/:style/:basename.:extension'
+  :command_path: /usr/local/bin
+  :valid_image_formats:
+    - png
+    - jpg
+  :valid_image_content_types:
+    - image/png
+    - image/jpg
+    - image/jpeg
+  :valid_audio_formats:
+    - mp3
+  :valid_audio_content_types:
+    - audio/mpeg
+  :valid_video_formats:
+    - flv
+  :valid_video_content_types:
+    - video/flv
+    - video/x-flv
+    - flv-application/octet-stream
+development:
+  :paperclip:
+    <<: *shared
+
+test:
+  :paperclip:
+    <<: *shared
+
+cucumber:
+  :paperclip:
+    <<: *shared
+
+staging:
+  :paperclip:
+    <<: *shared
+    :command_path: /usr/bin
+
+production:
+  :paperclip:
+    <<: *shared
+    :command_path: /usr/bin

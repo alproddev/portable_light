@@ -1,0 +1,3 @@
+class BrazilController < ApplicationController
+
+end

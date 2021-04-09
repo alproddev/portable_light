@@ -1,0 +1,41 @@
+<% unless @images.blank? %>
+  <div id="highlight_box">
+    <% @images.each do |image| %>
+    <div class="slide">
+      <img src="<%= image.file.url %>" alt="<%= image.caption %>" width="975" height="414" />
+      <p><%= image.caption %></p>
+    </div>
+    <% end %>
+  </div>
+
+  <ul id="highlight_box_nav">
+    <% @images.each do |image| %>
+    <li><a href="#"><img src="<%= image.file.url(:thumb) %>" alt="<%= image.caption %>" width="50" height="50" /></a></li>
+    <% end %>
+  </ul>
+<% end %>
+<div id="left_col">
+  <h1 id="highlights"><%= @highlight.title %></h1>
+  <%= @highlight.body.to_html %>
+
+  <% if @highlight.download.file? %>
+  <p><%= link_to "Download", @highlight.download.url %></p>
+  <% end %>
+</div>
+
+<div id="right_col">
+
+<% unless @highlight.related_links.blank? %>
+  <h2 id="related_h2">Related Links</h2>
+  <%= @highlight.related_links.to_html %>
+<% end %>
+
+  <div id="link_block">
+    <a href="https://nc.rmi.org/NETCOMMUNITY/SSLPage.aspx?pid=285&amp;srcid=285" id="donate_link">Donate</a>
+    <a href="http://archive.portablelight.org/" id="old_site_link">Visit our old website</a>
+    <a href="mailto:info@kvarch.net" id="contact_link">Contact us</a>
+    <p>The Rocky Mountain Institute, America&#8217;s leading think and do tank for renewable energy, is working with the Portable Light Team to scale the project.</p>
+  </div>
+
+</div>
+

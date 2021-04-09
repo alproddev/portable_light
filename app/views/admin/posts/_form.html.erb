@@ -1,0 +1,8 @@
+<% form.inputs do %>
+  <%= form.input :title %>
+  <%= form.input :intro %>
+  <%= form.input :body %>
+  <%= form.input :image, :required => true, :hint => attachment_requirements(:dimensions => Post::RequiredDimensions, :formats => Settings[:paperclip][:valid_image_formats]) %>
+  <%= image_preview(resource, :image) %>
+  <%= is_visible_radio_buttons(form) %>
+<% end %>

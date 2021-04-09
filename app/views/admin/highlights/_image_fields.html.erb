@@ -1,0 +1,20 @@
+<% form.inputs :class => (form.object.file? ? "admin_file" : "admin_file_new") do %>
+
+<% if form.object.file? %>
+    <li class="preview">
+      <strong>Current Image</strong>:
+      <%= link_to(image_tag(form.object.file.url(:thumb)), "##{dom_id(form.object, 'file')}") %>
+      <div id="<%= dom_id(form.object, 'file') %>">
+        <img src="<%= form.object.file.url %>" />
+      </div>
+    </li>
+    <%= form.input :file, :hint => attachment_requirements(:dimensions => HighlightImage::RequiredDimensions, :formats => Settings[:paperclip][:valid_image_formats]), :label => "Update existing file" %>
+    <%= form.input :caption %>
+    <%= link_to_remove_fields "remove", form %>
+<% else %>
+    <%= form.input :file, :hint => attachment_requirements(:dimensions => HighlightImage::RequiredDimensions, :formats => Settings[:paperclip][:valid_image_formats]) %>
+    <%= form.input :caption %>
+    <%= link_to_remove_fields "remove", form %>
+<% end %>
+
+<% end %>

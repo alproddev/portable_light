@@ -1,0 +1,4 @@
+CrushLovelyFrameworkGenerator
+====================
+
+Description goes here

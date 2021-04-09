@@ -1,0 +1,23 @@
+<%= heading(plural_resource) %>
+
+<%= cta link_to("New #{singular_resource} &raquo;", new_resource_path) %>
+
+<%=
+  collection_table(collection) do |t|
+    columns.each do |column|
+      t.header column
+    end
+    action_table_headings(t)
+
+    t.rows.each do |row, item, index|
+      row[:class] = boolean_class(item.is_visible)
+      columns.each do |column|
+        row.cell(column, item.send(column))
+      end
+      action_table_rows(row, item)
+    end
+  end
+%>
+
+<%= make_sortable("#{resource_class.to_s.downcase}-rows", sort_collection_path) %>
+

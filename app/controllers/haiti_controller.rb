@@ -1,0 +1,3 @@
+class HaitiController < ApplicationController
+
+end

@@ -1,0 +1,10 @@
+<%%= heading("Edit #{singular_resource}") %>
+
+<%%= cta link_to("&laquo; Back to #{plural_resource}", collection_path) %>
+
+<%% semantic_form_for resource, :url => resource_path(resource), :html => { :multipart => true } do |form| %>
+  <%%= render :partial => 'form', :locals => { :form => form } %>
+  <%%= form.buttons %>
+<%% end %>
+
+

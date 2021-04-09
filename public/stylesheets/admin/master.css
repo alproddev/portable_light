@@ -1,0 +1,440 @@
+/*  CRUSH + LOVELY ADMIN
+    ...................................................................... */
+
+body {
+  border-top: 10px solid #222;
+  background: #333;
+  font-size: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: -1px -1px 1px #000;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, table {
+  margin-bottom: 1em;
+}
+
+h1 {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  padding: 2em;
+}
+
+h1 strong {
+  display: block;
+  font-weight: normal;
+  font-size: 2em;
+  text-transform: none;
+}
+
+ul.menu {
+  margin-bottom: 0;
+  padding: 0 2em;
+  list-style: none;
+  line-height: 0;
+  overflow: hidden;
+}
+
+ul.menu li {
+  display: inline;
+}
+
+ul.menu a, ul.menu form button {
+  float: left;
+  margin: 0 .25em -3px 0;
+  padding: .75em;
+  border: 0;
+  border-top: 1px solid #444;
+  border-right: 1px solid #444;
+  background: #222;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.25em;
+  vertical-align: middle;
+  font-family: inherit;
+}
+ul.menu .user form {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-right: 0;
+  margin-left: .25em;
+}
+
+ul.menu a:hover, ul.menu form button:hover {
+  background: #000;
+}
+
+ul.menu a.active {
+  position: relative;
+  margin-bottom: -1px;
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+ul.menu a.active:hover {
+  border-bottom-color: #eee;
+  background: #eee;
+}
+
+p#logged_in_as {
+  position: absolute;
+  top: 3.61em;
+  right: 2em;
+}
+
+#page {
+  clear: both;
+  padding: 2em 2em 4em;
+  border-top: 1px solid #444;
+  background: #fff;
+  color: #333;
+  text-shadow: none;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+ul.calltoaction li {
+  float: left;
+  margin: 0 0 1em 0;
+  list-style: none;
+}
+
+ul.calltoaction li a {
+  float: left;
+  margin-right: 1em;
+  padding: .75em;
+  border: 1px solid #222;
+  border-top: 1px solid #444;
+  border-left: 1px solid #444;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: -1px -1px 1px #000;
+}
+
+ul.calltoaction li a:hover {
+  background: #111;
+}
+
+ul.calltoaction li a.active {
+  background: #f9f9f9;
+  color: #333;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+#content {
+  padding-top: 2em;
+  clear: both;
+}
+
+h3 {
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.75em;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+h4 {
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+  font-size: 1.25em;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+table.ui-collection, table.ui-collection th, table.ui-collection td {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+table.ui-collection tbody tr.hidden {
+  opacity: 0.5;
+}
+
+table.ui-collection tbody tr.odd {
+  background: #eee;
+}
+
+table.ui-collection tbody tr:hover {
+  background: #f9f9f9;
+}
+
+table.ui-collection tbody tr.odd:hover {
+  background: #e9e9e9;
+}
+
+table.ui-collection td, table.ui-collection th {
+  border-right: 0px;
+  border-left: 0px;
+  padding: .75em;
+}
+
+table.ui-collection th {
+  background: #ccc;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+table.ui-collection td img {
+  position: relative;
+  margin: -0.25em;
+  padding: 2px;
+  width: auto !important;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+table.ui-collection td p {
+  margin-bottom: 0;
+}
+
+code, pre { 
+  background: #ddd;
+  padding: 0.25em;
+}
+
+a:link, a:visited {
+  color: #cf3200;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+form.formtastic {
+  clear: both;
+  overflow: hidden;
+}
+fieldset {
+  position: relative;
+  float: left;
+  clear: both;
+  padding-top: 6em;
+  padding-bottom: 1em;
+  width: 100%;
+}
+fieldset.inputs,
+fieldset.buttons {
+  padding-top: 0;
+}
+fieldset.admin_file,
+fieldset.admin_file_new {
+  width: 60em;
+  padding: 12px 10px 0 10px;
+  background: #eee;
+  border: solid 1px #ccc;
+  margin-bottom: 12px;
+}
+fieldset.admin_file_new {
+  background: none;
+}
+fieldset.admin_file li, fieldset.admin_file_new li {
+  padding: 0 6px 10px 6px;
+  margin-bottom: 0;
+  list-style: none;
+}
+legend span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1.25em 0 .625em;
+  border-bottom: 1px solid #eee;
+  font-size: 1.5em;
+}
+form p {
+  clear: left;
+}
+form p.inline-errors {
+  padding: 5px 0;
+  font-weight: bold;
+  color: #900;
+}
+form ol,
+form li {
+  clear: left;
+}
+form p.buttons {
+  background: #eee;
+  border-top: 1px solid #ccc;
+  padding: .75em 1em;
+  text-align: right;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+label abbr {
+  border: 0;
+}
+.checkbox label {
+  display: inline;
+}
+input, textarea {
+  border: 1px solid #bbb;
+  padding: .5em;
+  font-family: inherit;
+  font-size: 1em;
+  vertical-align: middle;
+  text-shadow: 1px 1px 1px #fff;
+}
+.error input,
+.error textarea {
+  border-color: #900;
+}
+.error abbr {
+  color: #900;
+}
+
+.checkbox input, .file-upload input,
+.check_boxes input, .radio input {
+  border: 0;
+  padding: 0;
+}
+
+span.details {
+  display: block;
+  padding-top: .5em;
+}
+
+button {
+  vertical-align: middle;
+}
+
+input:hover, textarea:hover {
+  border-color: #aaa;
+}
+
+textarea {
+  width: 60em;
+  height: 20em;
+}
+
+input:focus, textarea:focus {
+  background: #ffc;
+}
+
+ul#image_browser {
+  list-style: none;
+}
+
+ul#image_browser li {
+  float: left;
+  width: 115px;
+  padding: 1em 1em 0 1em;
+  background: #ddd;
+  margin: 0 1em 1em 0;
+}
+
+#notifications .success, #notifications .notice, #notifications .error, #notifications .failure, .errorExplanation {
+  position: relative;
+  top: -2em;
+  margin-bottom: 2em;
+  border: 2px solid #999;
+  background: #eee;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 1px #fff;
+}
+.errorExplanation {
+  top: 0;
+  text-align: left;
+  margin-bottom: -3em;
+}
+.errorExplanation h2 {
+  font-size: 1.25em;
+}
+.errorExplanation ul {
+  margin-left: 1.5em;
+}
+.notice p {
+  margin-bottom: 0;
+}
+
+p.error input {
+  float: left;
+  border: 1px solid #900;
+}
+
+p.error .error {
+  clear: left;
+  float: left;
+  margin: .5em 0 2em;
+  padding: .625em 1em;
+  background: #eee;
+  color: #900;
+}
+p.error .error:before {
+  margin-right: .75em;
+  line-height: 0;
+  content: "\2191";
+}
+
+#footer {
+  padding: 2em 2em 1em;
+  border-top: 10px solid #111;
+}
+
+#footer a {
+  color: #fff;
+}
+
+ul.menu:after, ul#image_browser:after {
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: ".";
+}
+.column, .checkboxes {
+  float: left;
+  width: 50%;
+  padding: 1.5em 0 1em;
+  border-top: 1px dotted #ccc;
+}
+.checkboxes label {
+  font-weight: normal;
+}
+.column p {
+  margin-right: 1em;
+}
+p.current-image img {
+  padding: 2px;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+.pagination {
+  margin-top: 1em;
+  border-top: 1px solid #ccc;
+  padding: 1em 0;
+  overflow: hidden;
+  line-height: 1em;
+}
+.pagination span,
+.pagination a {
+  float: left;
+  padding: .5em .75em .45em;
+  border: 1px solid #fff;
+}
+.pagination a {
+  background: #eee;
+  text-decoration: none;
+  color: #333;
+}
+.pagination a:hover {
+  border: 1px solid #ccc;
+}

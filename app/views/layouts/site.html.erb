@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Portable Light</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-language" content="en-us" />
+  <meta name="rating" content="global" />
+  <meta name="robots" content="index, follow, noodp" />
+  <meta http-equiv="imagetoolbar" content="false" />
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  <%= yield :stylesheets %>
+  <%= stylesheet_link_tag 'main', 'jquery.fancybox' %>
+  <%= javascript_include_tag 'jquery-1.7.2.min', 'jquery.easing', 'jquery.cycle', 'application', 'menu', 'jquery.fancybox', 'jquery.fancybox.pack' %>
+  <%= yield :javascripts %>
+</head>
+
+<body>
+
+  <div id="container">
+    <h1><a href="/">Portable Light</a></h1>
+
+    <%= yield %>
+
+    <div id="footer" >
+      <p id="copy">COPYRIGHT &copy; 2012 portablelight.org</p>
+      <p>Site design by <a href="http://amdixon.com/" rel="external">amdixon</a></p>
+    </div>
+
+  </div>
+  
+  <%= google_analytics_tracking_code %>
+</body>
+</html>

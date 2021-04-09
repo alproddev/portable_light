@@ -1,0 +1,5 @@
+<ul>
+  <% @highlights.each do |highlight| %>
+    <li><%= link_to highlight.title, highlight_path(highlight) %></li>
+  <% end %>
+</ul>
